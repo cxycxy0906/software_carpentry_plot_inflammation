@@ -1,7 +1,7 @@
 # Author: Naupaka Zimmerman June 16, 2014
 # Script to make figure with ggplot from
 # command line argument for SWC bootcamp
-# UC Davis - Davis, CA
+# UC Davis - Davis, CAwin
  
 .libPaths("C:/Users/Xiaoya/Documents/R/win-library/3.1")
  
@@ -17,7 +17,8 @@ data.in <- read.csv(options[1])
  
 # melt with defaults
 data.in.melted <- melt(data.in)
- 
+
+# creat a plot with ggplot
 out.plot <- ggplot(data.in.melted,(aes(x=PatientID, y=value))) + 
     geom_point() + 
     stat_sum() +
