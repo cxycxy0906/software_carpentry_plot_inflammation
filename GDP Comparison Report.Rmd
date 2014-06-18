@@ -1,0 +1,25 @@
+GDP Comparison
+========================================================
+
+Below is a comparison of GDP among three contries-
+
+```{r echo=FALSE, message=FALSE}
+require(ggplot2)
+require(reshape2)
+
+raw <- read.delim('gapminder.txt')
+
+country.names  <- c('China', 'Afghanistan', 'Ireland')
+country3 <- subset(raw, country %in% country.names)
+
+ggplot(country3, aes(x=year, y=gdpPercap, group=country, color=country))+
+  geom_line() + ggtitle('GDP Comparison')
+
+```
+
+You can also embed plots, for example:
+
+```{r fig.width=7, fig.height=6}
+plot(cars)
+```
+
